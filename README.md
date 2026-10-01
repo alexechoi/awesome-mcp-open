@@ -135,7 +135,7 @@ So I started keeping my own list, and this is it. Only servers you can actually 
 
 ## Contents
 
-<table>
+<table
 <tr>
 <td valign="top">
 
