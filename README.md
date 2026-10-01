@@ -8,7 +8,134 @@ So I started keeping my own list, and this is it. Only servers you can actually 
 
 ## Contents
 
-<table>- **[x64dbg MCP]
+<table>
+<tr>
+<td valign="top">
+
+- [🔍 Search &amp; Web](#search-web)
+- [🌐 Browser Automation](#browser-automation)
+- [🗄️ Databases](#databases)
+- [📊 Data &amp; Analytics](#data-analytics)
+- [🛠️ Developer Tools](#developer-tools)
+
+</td>
+<td valign="top">
+
+- [🚢 DevOps &amp; Infra](#devops-infra)
+- [☁️ Cloud &amp; Deploy](#cloud-deploy)
+- [💳 Payments &amp; Finance](#payments-finance)
+- [🎨 Design &amp; Media](#design-media)
+- [🧠 Memory](#memory)
+
+</td>
+<td valign="top">
+
+- [📋 Productivity &amp; Tasks](#productivity-tasks)
+- [💬 Communication](#communication)
+- [📣 Social](#social)
+- [🗺️ Maps &amp; Location](#maps-location)
+- [🔒 Security](#security)
+
+</td>
+</tr>
+</table>
+
+---
+
+### What earns a place
+
+A server has to clear three bars. Miss one and it's out, however good it is otherwise.
+
+- **Self-hostable.** You run it, and nothing in the request path has to touch a vendor's servers.
+- **Open source.** A real FOSS license, so you can read the code before you give it access to anything.
+- **No lock-in.** It keeps working without a paid backend, and your data isn't stuck on someone else's box.
+
+Plenty gets left out on purpose. Cloud-only servers you can't run. Projects under source-available licenses that aren't really open (n8n's is the usual example). Clients that do nothing until you pay for an API. Mostly good software, just not what I'm collecting here.
+
+---
+
+### Red flags
+
+Some of these work fine but come with a catch you'll want to know about first. Two of them show up in red, and you can confirm either one on the repo page in a few seconds:
+
+| flag | meaning |
+|---|---|
+| $\textcolor{red}{\textsf{fiddly setup}}$ | wants Docker, a database, or a few services running before it does anything |
+| $\textcolor{red}{\textsf{heavy}}$ | throws dozens of tools at the model and eats into your context |
+
+### New &amp; emerging
+
+🌿 means it's newer and still under 500 stars. Often worth a try, just less proven than the ones that have been around a while.
+
+---
+
+<a id="search-web"></a>
+## 🔍 Search & Web
+
+- **[Brave Search](https://github.com/brave/brave-search-mcp-server)** · Query Brave's Search, Summarizer, and Local APIs from an MCP server
+- **[Crawl4AI](https://github.com/unclecode/crawl4ai)** · Self-hosted LLM-friendly web crawler and scraper with a built-in Docker MCP bridge exposing crawl, scrape, and markdown-extraction tools · $\textcolor{red}{\textsf{fiddly setup}}$
+- **[DuckDuckGo](https://github.com/nickclyde/duckduckgo-mcp-server)** · Search DuckDuckGo and fetch/parse page content into clean text with no API key needed
+- **[fastCRW](https://github.com/us/crw)** 🌿 · Rust-based self-hostable crawl, scrape, and search server, a keyless Firecrawl/Tavily alternative for agents
+- **[Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch)** · Official reference MCP server that fetches a URL and converts its content to markdown for LLM consumption
+- **[Hister](https://github.com/asciimoo/hister)** · Indexes your browsing history and local files into a private, full-text search engine reachable over MCP
+- **[Meilisearch](https://github.com/meilisearch/meilisearch-mcp)** · Manage indexes, documents and settings and run searches on a self-hosted Meilisearch instance
+- **[Open WebSearch](https://github.com/Aas-ee/open-webSearch)** · Multi-engine web search MCP server scraping Bing, DuckDuckGo, Brave, Startpage and more with no API keys required
+- **[SearXNG](https://github.com/ihor-sokoliuk/mcp-searxng)** · Query a self-hosted or public SearXNG metasearch instance for private, ad-free web search results
+- **[Wigolo](https://github.com/KnockOutEZ/wigolo)** · Local-first web search, fetch, crawl, and research tools for agents with zero API keys or cloud
+
+<a id="browser-automation"></a>
+## 🌐 Browser Automation
+
+- **[Browser Use](https://github.com/browser-use/browser-use)** · Lets AI agents drive a locally running browser to complete multi-step web tasks, exposed as an MCP server
+- **[BrowserTools](https://github.com/AgentDeskAI/browser-tools-mcp)** · Streams live browser console logs, network requests, and screenshots from a Chrome extension into an MCP-compatible IDE · $\textcolor{red}{\textsf{fiddly setup}}$
+- **[BrowserWing](https://github.com/browserwing/browserwing)** · Turns recorded browser actions into reusable MCP commands or skills for fast, reliable site automation
+- **[Chrome DevTools](https://github.com/ChromeDevTools/chrome-devtools-mcp)** · Controls a local Chrome instance for performance tracing, network inspection, and DOM debugging via the Chrome DevTools Protocol
+- **[Computer-Use Agent (CUA)](https://github.com/trycua/cua/tree/main/libs/python/mcp-server)** · Runs a full computer-use agent driving sandboxed macOS/Windows/Linux VMs for cross-OS desktop control · $\textcolor{red}{\textsf{fiddly setup}}$ · $\textcolor{red}{\textsf{heavy}}$
+- **[Desktop Commander](https://github.com/wonderwhy-er/DesktopCommanderMCP)** · Gives an agent terminal control, filesystem search, and diff-based file editing on your local desktop
+- **[DrissionPage MCP Server](https://github.com/jumodada/Drissionpage-MCP-Server)** 🌿 · Exposes 53 typed DrissionPage browser tools for structured, vision-ready navigation, clicking, and form automation · $\textcolor{red}{\textsf{heavy}}$
+- **[OpenDia](https://github.com/aeonfun/opendia)** · Connects AI models to your real Chrome, Firefox, or Arc browser using your existing logins and sessions
+- **[Playwright](https://github.com/microsoft/playwright-mcp)** · Drives a real Chromium/Firefox/WebKit browser via Playwright's accessibility tree for navigation, form filling, and scraping
+- **[Safari MCP](https://github.com/achiya-automation/safari-mcp)** 🌿 · Automates native Safari on macOS via AppleScript with 80+ tools, keeping logins without a headless browser · $\textcolor{red}{\textsf{heavy}}$
+- **[Skyvern](https://github.com/Skyvern-AI/skyvern)** · Automate browser workflows with vision-and-LLM-driven agents instead of brittle selectors
+- **[Stealth Browser MCP](https://github.com/vibheksoni/stealth-browser-mcp)** · Drives undetectable real browser instances to bypass Cloudflare and anti-bot systems for AI agents · $\textcolor{red}{\textsf{heavy}}$
+
+<a id="databases"></a>
+## 🗄️ Databases
+
+- **[DBHub](https://github.com/bytebase/dbhub)** · Zero-dependency SQL gateway MCP server for Postgres, MySQL, MariaDB, SQL Server and SQLite with read-only mode and query guardrails
+- **[Elasticsearch MCP Server](https://github.com/elastic/mcp-server-elasticsearch)** · Official Elastic server for natural-language search, index management, and cluster analysis against a self-hosted Elasticsearch
+- **[FreePeak DB](https://github.com/FreePeak/db-mcp-server)** · Go-based multi-database MCP server supporting concurrent MySQL, PostgreSQL, SQLite, Oracle and TimescaleDB connections with schema and performance tools · $\textcolor{red}{\textsf{heavy}}$
+- **[Milvus](https://github.com/zilliztech/mcp-server-milvus)** · Official MCP server exposing collection search, insert, and query tools for a self-hosted Milvus vector database · $\textcolor{red}{\textsf{fiddly setup}}$
+- **[MindsDB](https://github.com/mindsdb/mindsdb)** · Query and federate data across many databases and sources through a self-hosted MCP-enabled server · $\textcolor{red}{\textsf{fiddly setup}}$
+- **[MongoDB MCP Server](https://github.com/mongodb-js/mongodb-mcp-server)** · Official server for querying, managing, and aggregating self-hosted MongoDB or Atlas clusters through natural language
+- **[MotherDuck / DuckDB](https://github.com/motherduckdb/mcp-server-motherduck)** · Runs SQL analytics over local, in-memory, or S3-hosted DuckDB files with no MotherDuck account required
+- **[MySQL](https://github.com/designcomputer/mysql_mcp_server)** · Enables secure, configurable read/write SQL access to a self-hosted MySQL database
+- **[Neo4j](https://github.com/neo4j-contrib/mcp-neo4j)** · Run Cypher queries and manage graph data and schema on a self-hosted Neo4j database
+- **[OpenSearch MCP Server](https://github.com/opensearch-project/opensearch-mcp-server-py)** 🌿 · Official OpenSearch Project server exposing search, index, and cluster-management tools for self-hosted OpenSearch clusters
+- **[Postgres MCP Pro](https://github.com/crystaldba/postgres-mcp)** · Runs against your own Postgres to give schema introspection, EXPLAIN-based query tuning, index advice, and configurable read/write SQL access
+- **[Qdrant](https://github.com/qdrant/mcp-server-qdrant)** · Official MCP server for storing and semantically searching data in a self-hosted Qdrant vector database · $\textcolor{red}{\textsf{fiddly setup}}$
+- **[Redis](https://github.com/redis/mcp-redis)** · Natural-language interface to manage, query, and inspect data in a Redis instance · $\textcolor{red}{\textsf{fiddly setup}}$
+- **[Supabase](https://github.com/supabase/mcp)** · Manage Supabase projects, tables, and queries from an MCP server
+- **[Toolbox for Databases](https://github.com/googleapis/mcp-toolbox)** · Connect an agent to Postgres, MySQL, Spanner, and other databases through a shared open toolbox
+- **[Weaviate](https://github.com/weaviate/weaviate)** · Vector database with a native MCP endpoint you enable and self-host via a single environment variable · $\textcolor{red}{\textsf{fiddly setup}}$
+
+<a id="data-analytics"></a>
+## 📊 Data & Analytics
+
+- **[Apache Airflow MCP Server](https://github.com/yangkyeongmo/mcp-server-apache-airflow)** 🌿 · Exposes Apache Airflow DAGs, runs, and task instances as MCP tools for orchestrating self-hosted data pipelines
+- **[Apache Pinot MCP Server](https://github.com/startreedata/mcp-pinot)** 🌿 · StarTree-maintained server for querying and inspecting self-hosted Apache Pinot real-time OLAP analytics clusters
+- **[Apache Superset](https://github.com/apache/superset/tree/master/superset/mcp_service)** · Built-in service letting AI agents query and manage dashboards, charts, and datasets on a self-hosted Superset instance · $\textcolor{red}{\textsf{fiddly setup}}$
+- **[ClickHouse](https://github.com/ClickHouse/mcp-clickhouse)** · Official MCP server for running read/write SQL queries and browsing schema on a self-hosted ClickHouse cluster · $\textcolor{red}{\textsf{fiddly setup}}$
+
+> Model Context Protocol servers you can actually run yourself.
+
+I kept running into the same thing: I'd find a promising MCP server, wire it up, and only then realize it was just a shell around some company's paid API. Cancel the subscription and it's a brick. Most of the big MCP lists are full of these.
+
+So I started keeping my own list, and this is it. Only servers you can actually run yourself. Open source, self-hosted, your data stays on your machine. If a tool only works by calling home to someone else's cloud, it's not here. That's the whole rule, and everything below has been checked against it by hand.
+
+## Contents
+
+<table>
 <tr>
 <td valign="top">
 
